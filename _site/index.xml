@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>verano magnifico</title>
+<link>https://your-website-url.example.com/</link>
+<atom:link href="https://your-website-url.example.com/index.xml" rel="self" type="application/rss+xml"/>
+<description>A blog built with Quarto</description>
+<generator>quarto-1.9.38</generator>
+<lastBuildDate>Fri, 31 Jul 2026 07:00:00 GMT</lastBuildDate>
+<item>
+  <title>Hither! Hither!</title>
+  <dc:creator>Matthew Munoz</dc:creator>
+  <link>https://your-website-url.example.com/posts/welcome/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>“The fool doth think he is wise, but the wise man knows himself to be a fool”</p>
+<p><img src="https://your-website-url.example.com/posts/welcome/thumbnail.jpg" class="img-fluid"></p>
+<p>Shenanigans aside, this should serve to elucidate the purpose of this website. Perhaps, in a sense, the world was too boring. And I, being a member of said world, am also boring.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://your-website-url.example.com/posts/welcome/image.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>I get bored. Too bored. I need things to occupy my time. I also need a way of “focusing” my projects. It would seem my mind is a zero, containing all things — but mostly no things at all!</p>
+<p>Aye, that reminds me. Some time ago when I was pondering. Everything? Nothing? Who knows. Suddenly, a stroke of genius hit me! Yet, I was so lost in (no) thought that I did not even here. Until said thought began screaming — O so loud! And I turned to myself and said “Etc, etc, etc” or however it went. The point being is that I would like to document stray thoughts. They escape me otherwise.</p>
+<p>Also, I would like to more fully develop those “stray thoughts” into “stray projects”(?) But, I am thinking to make this more of an informal explanation of tips and tricks that I have come across.</p>
+<p>Ah! To resist the urge to demonstrate… Should I? A little example would not hurt. No, it would not hurt at all.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(tidyverse)</span>
+<span id="cb1-2"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">set.seed</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2024</span>)</span>
+<span id="cb1-3">countries <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Julia"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Bethania"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Stalwarland"</span>)</span>
+<span id="cb1-4">years <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2015</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2024</span></span>
+<span id="cb1-5">panel <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">expand.grid</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">countries =</span> countries,</span>
+<span id="cb1-6">            <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">years =</span> years)</span>
+<span id="cb1-7"><span class="do" style="color: #5E5E5E;
+background-color: null;
+font-style: italic;">## seting the stage ----</span></span>
+<span id="cb1-8">panel <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> panel <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb1-9">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mutate</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">gdp =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">NA</span>) </span>
+<span id="cb1-10"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span>(c <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> countries){ <span class="do" style="color: #5E5E5E;
+background-color: null;
+font-style: italic;">## yes, I know that there is a better way</span></span>
+<span id="cb1-11">  base <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">runif</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">500</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1000</span>)</span>
+<span id="cb1-12">  growth_rates <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">runif</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">length</span>(years), <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.03</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.08</span>)</span>
+<span id="cb1-13">  gdp_path <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> base <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">cumprod</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> growth_rates)</span>
+<span id="cb1-14">  panel<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>gdp[panel<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>countries <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> c] <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> gdp_path</span>
+<span id="cb1-15">}</span>
+<span id="cb1-16">panel <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> panel <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb1-17">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mutate</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">investment =</span> gdp <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">runif</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">nrow</span>(panel), <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.15</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.25</span>))</span>
+<span id="cb1-18">comp_panel <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> panel <span class="do" style="color: #5E5E5E;
+background-color: null;
+font-style: italic;">## for comparisons sake</span></span></code></pre></div></div>
+</div>
+<p>The following cell will be transforming panel. Keep that in mind.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span>(c <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> countries){</span>
+<span id="cb2-2">  <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span>(n <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">length</span>(panel<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>gdp[panel<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>countries <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> c])){</span>
+<span id="cb2-3">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> (n <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>){</span>
+<span id="cb2-4">      panel<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>gdp_growth[panel<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>countries <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> c] <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">NA</span></span>
+<span id="cb2-5">    }</span>
+<span id="cb2-6">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">else</span> {</span>
+<span id="cb2-7">      gdp_1 <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> panel<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>gdp[panel<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>countries <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> c][n<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">-1</span>]</span>
+<span id="cb2-8">      gdp_2 <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> panel<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>gdp[panel<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>countries <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> c][n]</span>
+<span id="cb2-9">      panel<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>gdp_growth[panel<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>countries <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> c][n] <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> (gdp_2 <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> gdp_1)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span>gdp_1</span>
+<span id="cb2-10">    }</span>
+<span id="cb2-11">  }</span>
+<span id="cb2-12">}</span>
+<span id="cb2-13">panel <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">as_tibble</span>() <span class="do" style="color: #5E5E5E;
+background-color: null;
+font-style: italic;">## again, for comparison's sake</span></span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 30 × 5
+   countries   years   gdp investment gdp_growth
+   &lt;fct&gt;       &lt;int&gt; &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;
+ 1 Julia        2015  923.       228.   NA      
+ 2 Bethania     2015 1023.       222.   NA      
+ 3 Stalwarland  2015  894.       195.   NA      
+ 4 Julia        2016  965.       150.    0.0448 
+ 5 Bethania     2016 1050.       259.    0.0267 
+ 6 Stalwarland  2016  945.       144.    0.0577 
+ 7 Julia        2017 1010.       217.    0.0468 
+ 8 Bethania     2017 1071.       254.    0.0194 
+ 9 Stalwarland  2017  947.       228.    0.00215
+10 Julia        2018 1030.       219.    0.0203 
+# ℹ 20 more rows</code></pre>
+</div>
+</div>
+<p>This Base R code is so easily solved by some Tidyverse code. Do you know how?</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1">comp_panel <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">group_by</span>(countries) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb4-2">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mutate</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">gdp_growth =</span> (gdp <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">lag</span>(gdp))<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">lag</span>(gdp)) <span class="do" style="color: #5E5E5E;
+background-color: null;
+font-style: italic;">## wonderful!</span></span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 30 × 5
+# Groups:   countries [3]
+   countries   years   gdp investment gdp_growth
+   &lt;fct&gt;       &lt;int&gt; &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;
+ 1 Julia        2015  923.       228.   NA      
+ 2 Bethania     2015 1023.       222.   NA      
+ 3 Stalwarland  2015  894.       195.   NA      
+ 4 Julia        2016  965.       150.    0.0448 
+ 5 Bethania     2016 1050.       259.    0.0267 
+ 6 Stalwarland  2016  945.       144.    0.0577 
+ 7 Julia        2017 1010.       217.    0.0468 
+ 8 Bethania     2017 1071.       254.    0.0194 
+ 9 Stalwarland  2017  947.       228.    0.00215
+10 Julia        2018 1030.       219.    0.0203 
+# ℹ 20 more rows</code></pre>
+</div>
+</div>
+<p>How much better is that? An incomparable amount, surely. Aye, you do not need to know this to use TidyVerse, but man does it let you appreciate it all the more.</p>
+
+
+
+ ]]></description>
+  <category>news</category>
+  <category>update</category>
+  <category>R</category>
+  <guid>https://your-website-url.example.com/posts/welcome/</guid>
+  <pubDate>Fri, 31 Jul 2026 07:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>

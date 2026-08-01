@@ -1,0 +1,72 @@
+---
+title: "Hither! Hither!"
+author: "Matthew Munoz"
+date: "2026-07-31"
+categories: [news, update, R]
+warning: false
+---
+
+"The fool doth think he is wise, but the wise man knows himself to be a fool"
+
+![](thumbnail.jpg)
+
+Shenanigans aside, this should serve to elucidate the purpose of this website. Perhaps, in a sense, the world was too boring. And I, being a member of said world, am also boring.
+
+![](image.jpg){fig-align="center"}
+
+I get bored. Too bored. I need things to occupy my time. I also need a way of "focusing" my projects. It would seem my mind is a zero, containing all things — but mostly no things at all!
+
+Aye, that reminds me. Some time ago when I was pondering. Everything? Nothing? Who knows. Suddenly, a stroke of genius hit me! Yet, I was so lost in (no) thought that I did not even here. Until said thought began screaming — O so loud! And I turned to myself and said "Etc, etc, etc" or however it went. The point being is that I would like to document stray thoughts. They escape me otherwise.
+
+Also, I would like to more fully develop those "stray thoughts" into "stray projects"(?) But, I am thinking to make this more of an informal explanation of tips and tricks that I have come across.
+
+Ah! To resist the urge to demonstrate... Should I? A little example would not hurt. No, it would not hurt at all.
+
+```{r}
+
+library(tidyverse)
+set.seed(2024)
+countries <- c("Julia", "Bethania", "Stalwarland")
+years <- 2015:2024
+panel <- expand.grid(countries = countries,
+            years = years)
+## seting the stage ----
+panel <- panel |> 
+  mutate(gdp = NA) 
+for(c in countries){ ## yes, I know that there is a better way
+  base <- runif(1, 500, 1000)
+  growth_rates <- runif(length(years), -0.03, 0.08)
+  gdp_path <- base * cumprod(1 + growth_rates)
+  panel$gdp[panel$countries == c] <- gdp_path
+}
+panel <- panel |> 
+  mutate(investment = gdp * runif(nrow(panel), 0.15, 0.25))
+comp_panel <- panel ## for comparisons sake
+```
+
+The following cell will be transforming panel. Keep that in mind.
+
+```{r}
+for(c in countries){
+  for(n in 1:length(panel$gdp[panel$countries == c])){
+    if (n == 1){
+      panel$gdp_growth[panel$countries == c] <- NA
+    }
+    else {
+      gdp_1 <- panel$gdp[panel$countries == c][n-1]
+      gdp_2 <- panel$gdp[panel$countries == c][n]
+      panel$gdp_growth[panel$countries == c][n] <- (gdp_2 - gdp_1)/gdp_1
+    }
+  }
+}
+panel |> as_tibble() ## again, for comparison's sake
+```
+
+This Base R code is so easily solved by some Tidyverse code. Do you know how?
+
+```{r}
+comp_panel |> group_by(countries) |> 
+  mutate(gdp_growth = (gdp - lag(gdp))/lag(gdp)) ## wonderful!
+```
+
+How much better is that? An incomparable amount, surely. Aye, you do not need to know this to use TidyVerse, but man does it let you appreciate it all the more.

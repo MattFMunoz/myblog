@@ -1,0 +1,21 @@
+---
+title: "Matthew Munoz"
+image: profile.jpg
+about:
+  template: jolla
+  links:
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/matthew-munoz-74b96a20b/
+    - icon: github
+      text: Github
+      href: https://github.com/MattFMunoz
+
+---
+"If the mind is mysterious, then the world is mystical; and yet the mind is real and our world is reality" - C'est Moi
+
+## Let's not get to ahead of our (my) selves (self)
+
+Yes! The world is real, and measurable a and post priori. What wonder befalls us! 
+
+That notwithstanding, you can mainly find in-progress or completed projects here. Maybe a status update - or a life update (if I ever feel like that). Many explorations shall be done in R, regarding economics especially.
