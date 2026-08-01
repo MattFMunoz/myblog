@@ -5,3 +5,10 @@ background-color: #d9cdb6;
   background-repeat: repeat;
   background-size: 200px 200px;
 }
+.quarto-post {
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  background-color: rgba(64, 46, 19, 0.23);
+  box-shadow: 0 2px 8px rgba(19, 24, 7, 0.1);
+}
