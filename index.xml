@@ -12,7 +12,7 @@
 <generator>quarto-1.9.38</generator>
 <lastBuildDate>Sat, 01 Aug 2026 07:00:00 GMT</lastBuildDate>
 <item>
-  <title>Lizard Wizard</title>
+  <title>Utility and its function</title>
   <dc:creator>Matthew Munoz</dc:creator>
   <link>https://your-website-url.example.com/posts/test_post/</link>
   <description><![CDATA[ 
@@ -21,11 +21,211 @@
 
 
 
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis posuere ligula sit amet lacinia. Duis dignissim pellentesque magna, rhoncus congue sapien finibus mollis. Ut eu sem laoreet, vehicula ipsum in, convallis erat. Vestibulum magna sem, blandit pulvinar augue sit amet, auctor malesuada sapien. Nullam faucibus leo eget eros hendrerit, non laoreet ipsum lacinia. Curabitur cursus diam elit, non tempus ante volutpat a. Quisque hendrerit blandit purus non fringilla. Integer sit amet elit viverra ante dapibus semper. Vestibulum viverra rutrum enim, at luctus enim posuere eu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc ac dignissim magna. Vestibulum vitae egestas elit. Proin feugiat leo quis ante condimentum, eu ornare mauris feugiat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris cursus laoreet ex, dignissim bibendum est posuere iaculis. Suspendisse et maximus elit. In fringilla gravida ornare. Aenean id lectus pulvinar, sagittis felis nec, rutrum risus. Nam vel neque eu arcu blandit fringilla et in quam. Aliquam luctus est sit amet vestibulum eleifend. Phasellus elementum sagittis molestie. Proin tempor lorem arcu, at condimentum purus volutpat eu. Fusce et pellentesque ligula. Pellentesque id tellus at erat luctus fringilla. Suspendisse potenti. Etiam maximus accumsan gravida. Maecenas at nunc dignissim, euismod enim ac, bibendum ipsum. Maecenas vehicula velit in nisl aliquet ultricies. Nam eget massa interdum, maximus arcu vel, pretium erat. Maecenas sit amet tempor purus, vitae aliquet nunc. Vivamus cursus urna velit, eleifend dictum magna laoreet ut. Duis eu erat mollis, blandit magna id, tincidunt ipsum. Integer massa nibh, commodo eu ex vel, venenatis efficitur ligula. Integer convallis lacus elit, maximus eleifend lacus ornare ac. Vestibulum scelerisque viverra urna id lacinia. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aenean eget enim at diam bibendum tincidunt eu non purus. Nullam id magna ultrices, sodales metus viverra, tempus turpis. Duis ornare ex ac iaculis pretium. Maecenas sagittis odio id erat pharetra, sit amet consectetur quam sollicitudin. Vivamus pharetra quam purus, nec sagittis risus pretium at. Nullam feugiat, turpis ac accumsan interdum, sem tellus blandit neque, id vulputate diam quam semper nisl. Donec sit amet enim at neque porttitor aliquet. Phasellus facilisis nulla eget placerat eleifend. Vestibulum non egestas eros, eget lobortis ipsum. Nulla rutrum massa eget enim aliquam, id porttitor erat luctus. Nunc sagittis quis eros eu sagittis. Pellentesque dictum, erat at pellentesque sollicitudin, justo augue pulvinar metus, quis rutrum est mi nec felis. Vestibulum efficitur mi lorem, at elementum purus tincidunt a. Aliquam finibus enim magna, vitae pellentesque erat faucibus at. Nulla mauris tellus, imperdiet id lobortis et, dignissim condimentum ipsum. Morbi nulla orci, varius at aliquet sed, facilisis id tortor. Donec ut urna nisi. Aenean placerat luctus tortor vitae molestie. Nulla at aliquet nulla. Sed efficitur tellus orci, sed fringilla lectus laoreet eget. Vivamus maximus quam sit amet arcu dignissim, sed accumsan massa ullamcorper. Sed iaculis tincidunt feugiat. Nulla in est at nunc ultricies dictum ut vitae nunc. Aenean convallis vel diam at malesuada. Suspendisse arcu libero, vehicula tempus ultrices a, placerat sit amet tortor. Sed dictum id nulla commodo mattis. Aliquam mollis, nunc eu tristique faucibus, purus lacus tincidunt nulla, ac pretium lorem nunc ut enim. Curabitur eget mattis nisl, vitae sodales augue. Nam felis massa, bibendum sit amet nulla vel, vulputate rutrum lacus. Aenean convallis odio pharetra nulla mattis consequat. <img src="https://your-website-url.example.com/posts/test_post/thumbnail.jpg" class="img-fluid">b</p>
+<p>A quick little demonstration of utility functions</p>
+<p><img src="https://your-website-url.example.com/posts/test_post/thumbnail.jpg" class="img-fluid"></p>
+<p>We are all well aware of utility functions. So aware that you may question why something like this is even necessary. Many would argue that it is not. But this is primarily to serve as a refresh to myself.</p>
+<p>There are some notational things that do require some explanation prior to this refresh, so let’s brush up!</p>
+<section id="here-we-go" class="level2">
+<h2 class="anchored" data-anchor-id="here-we-go">Here we go</h2>
+<p>Well, let’s get a little bit abstract. Suppose there are two good, x and y that exist on the set of mutually exclusive alternatives. That is to say x, y represent two choices that you can not choose at once. Perhaps you want to go to sleep or go on a run or change your oil or etc. How could you do those simultaneously? The point being is that you can only pick one or the other. This is notationally equivalent to writing <img src="https://latex.codecogs.com/png.latex?%20x,y%20%5Cin%20X%20%20"> Now we can introduce our so-caled (weak) preference relation <img src="https://latex.codecogs.com/png.latex?%5Csuccsim">. This is a “binary relation on the set of alternatives.” For our purposes, this just means that you can compare each element in the set. If x is weakly preferred to y (x <img src="https://latex.codecogs.com/png.latex?%5Csuccsim"> y), we can say that “x is at least as good as y.” Awesome.</p>
+<p>The one thing about economics that we assume above all else is rationality. So we are going to assume that individual preferences are rational. To assume our assumption we must… make two assumptions about <img src="https://latex.codecogs.com/png.latex?%5Csuccsim"> : completeness and transitivity.</p>
+<ol type="i">
+<li>Completeness: <img src="https://latex.codecogs.com/png.latex?%5Cforall%20x,y%20%5Cin%20X"> we have that x <img src="https://latex.codecogs.com/png.latex?%5Csuccsim"> y or that y <img src="https://latex.codecogs.com/png.latex?%5Csuccsim"> y or both</li>
+<li>Transitvity: <img src="https://latex.codecogs.com/png.latex?%5Cforall%20x,y,z%20%5Cin%20X"> we have that if x <img src="https://latex.codecogs.com/png.latex?%5Csuccsim"> y and y <img src="https://latex.codecogs.com/png.latex?%5Csuccsim"> z, then x <img src="https://latex.codecogs.com/png.latex?%5Csuccsim"> z</li>
+</ol>
+<p>This is fairly cool, I would say. Our consumer (by property of completenss) has a ranking of elements within the set, and (by property of transitivity) the ranking is consistent.</p>
+<p>This is kind of a strong assumption, however. Imagine you, yourself were in a situation where… let’s say you are at Home Depot picking out a color for your kitchen. There are so many colors, so many choices! How can you look at them all and estalish a ranking? Ah! But our individual consumer would have no problem. They would be able to walk into Home Depot, look at all the color opitons, rank them all, and have those rankings be consistent. That is far, far easier said than done.</p>
+<p>Again, aside, etc. That should be the bare minimum necessary to go over utility functions.</p>
+</section>
+<section id="utility-functions" class="level2">
+<h2 class="anchored" data-anchor-id="utility-functions">Utility functions!</h2>
+<p>A utility function is something a bit abstract, but not to hard to wrap your mind around. The utility function maps each element from the set of alternatives onto the set of real numbers. This allows us to rank othe elements in accordance to the individuals preference.</p>
+<p><img src="https://latex.codecogs.com/png.latex?u:X%20%5Cmapsto%20%20%5Cmathbb%7BR%7D"> is a function representing preference relation <img src="https://latex.codecogs.com/png.latex?%5Csuccsim"> if for all x, y <img src="https://latex.codecogs.com/png.latex?%5Cin"> X <img src="https://latex.codecogs.com/png.latex?%20x%20%5Csuccsim%20y%20%5Ciff%20u(x)%20%5Cge%20u(y)"> As you will soon come to know, a utility function that represents a preference relation <img src="https://latex.codecogs.com/png.latex?%5Csuccsim"> is not unique. For any strictly increasing function <img src="https://latex.codecogs.com/png.latex?f:%20%5Cmathbb%7BR%7D%20%5Cmapsto%20%20%5Cmathbb%7BR%7D">, v(x) = f(u(x)). As long as the ranking of the alternatives is preserved, the utility function is valid!</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="do" style="color: #5E5E5E;
+background-color: null;
+font-style: italic;">## for our purposes, we will make x weakly preferred to y</span></span>
+<span id="cb1-2">u_x <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span>  <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">function</span>(x){</span>
+<span id="cb1-3">  x <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sample</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>)</span>
+<span id="cb1-4">}</span>
+<span id="cb1-5"></span>
+<span id="cb1-6">u_y <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span>  <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">function</span>(y){</span>
+<span id="cb1-7">  y <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span>  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sample</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>)</span>
+<span id="cb1-8">}</span>
+<span id="cb1-9"></span>
+<span id="cb1-10"><span class="do" style="color: #5E5E5E;
+background-color: null;
+font-style: italic;">## our strictly increasing function</span></span>
+<span id="cb1-11">f <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">function</span>(u){</span>
+<span id="cb1-12">  result <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">function</span>(x){</span>
+<span id="cb1-13">    x <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span></span>
+<span id="cb1-14">  }</span>
+<span id="cb1-15">  result</span>
+<span id="cb1-16">}</span>
+<span id="cb1-17"><span class="do" style="color: #5E5E5E;
+background-color: null;
+font-style: italic;">## should preserve the order</span></span>
+<span id="cb1-18">v_x <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">f</span>(u_x)</span>
+<span id="cb1-19">v_y <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">f</span>(u_y)</span>
+<span id="cb1-20"></span>
+<span id="cb1-21">my_tibble <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span>  tibble<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tribble</span>( </span>
+<span id="cb1-22">  <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span>x, <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span>y, <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span>preference,</span>
+<span id="cb1-23">  <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Cats"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Dogs"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"x preffered to y"</span>,</span>
+<span id="cb1-24">  <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Bats"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Frogs"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"x preffered to y"</span>,</span>
+<span id="cb1-25">  <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Hats"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Logs"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"x preferred to y"</span></span>
+<span id="cb1-26">)</span>
+<span id="cb1-27">my_tibble <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> my_tibble <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb1-28">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mutate</span>(</span>
+<span id="cb1-29">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">u_x =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">u_x</span>(x), <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">u_y =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">u_y</span>(y),</span>
+<span id="cb1-30">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">u_great =</span> u_x <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> u_y,</span>
+<span id="cb1-31">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">v_x =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">v_x</span>(u_x), <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">v_y =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">v_y</span>(u_y),</span>
+<span id="cb1-32">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">v_great =</span> v_x <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> v_y)</span>
+<span id="cb1-33"></span>
+<span id="cb1-34">my_tibble <span class="do" style="color: #5E5E5E;
+background-color: null;
+font-style: italic;">## you can see that the order is preserved </span></span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 9
+  x     y     preference         u_x   u_y u_great   v_x   v_y v_great
+  &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;            &lt;int&gt; &lt;int&gt; &lt;lgl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;lgl&gt;  
+1 Cats  Dogs  x preffered to y     6     3 TRUE       12     6 TRUE   
+2 Bats  Frogs x preffered to y     6     3 TRUE       12     6 TRUE   
+3 Hats  Logs  x preferred to y     6     3 TRUE       12     6 TRUE   </code></pre>
+</div>
+</div>
+<p>Yes, if you are wondering, I just wanted to show that R is capable of making funciton factories. That was the primary motivatoin in writing this. Putting that aside, let’s prove what that code is showing.</p>
+</section>
+<section id="proof" class="level2">
+<h2 class="anchored" data-anchor-id="proof">Proof</h2>
+<p>if <img src="https://latex.codecogs.com/png.latex?f:%20%5Cmathbb%7BR%7D%20%5Cmapsto%20%20%5Cmathbb%7BR%7D">, and u:X <img src="https://latex.codecogs.com/png.latex?%5Cmapsto%20%20%5Cmathbb%7BR%7D"> is a utility function representing preference relation <img src="https://latex.codecogs.com/png.latex?%5Csuccsim">, then the function v:X <img src="https://latex.codecogs.com/png.latex?%5Cmapsto%20%20%5Cmathbb%7BR%7D"> defined by v(x) = f(u(x)) is also a utility function representing preference relation <img src="https://latex.codecogs.com/png.latex?%5Csuccsim">.</p>
+<p>We can prove this directly. Assume that f is a strictly increasing function and u(x) is a utility function representing preference relation.</p>
+<p>By definition of strictly increasing, we know that for any <img src="https://latex.codecogs.com/png.latex?x_2%20%3E%20x_1"> that <img src="https://latex.codecogs.com/png.latex?f(x_2)%20%3E%20f(x_1)"></p>
+<p>By definition of a utility function representing preference relation, we know that <img src="https://latex.codecogs.com/png.latex?x%20%5Csuccsim%20y%20%5Ciff%20u(x)%20%5Cge%20u(y)">.</p>
+<p>Observe: Consider the utility function u (by our assumption) <img src="https://latex.codecogs.com/png.latex?%20x%20%5Csuccsim%20y%20%5Ciff%20u(x)%20%5Cge%20u(y)"> We define v(x) as f(u(x)). And since f is a strictly increasing funcion denoted by <img src="https://latex.codecogs.com/png.latex?%20x_2%20%3E%20x_1%20%5Ciff%20f(x_2)%20%3E%20f(x_1)%20"> which by contrapositive is logically equivalent to <img src="https://latex.codecogs.com/png.latex?%20x_1%20%5Cge%20x_2%20%5Ciff%20f(x_1)%20%5Cge%20f(x_2)"> Since in our utility function we have u(x) <img src="https://latex.codecogs.com/png.latex?%5Cge"> u(y), we can then say that f(u(x)) <img src="https://latex.codecogs.com/png.latex?%5Cge"> f(u(y)), which is equivalent to: <img src="https://latex.codecogs.com/png.latex?%20u(x)%20%5Cge%20u(y)%20%5Ciff%20v(x)%20%5Cge%20v(y)"> By definition of v(x) = f(u(x))! Thus we can say <img src="https://latex.codecogs.com/png.latex?%20x%20%5Csuccsim%20y%20%5Ciff%20u(x)%20%5Cge%20u(y)%20%5Ciff%20v(x)%20%5Cge%20v(y)%20"> which means <img src="https://latex.codecogs.com/png.latex?%20x%20%5Csuccsim%20y%20%5Ciff%20v(x)%20%5Cge%20v(y)%20"> Thus v is a utility function representing preference relation!</p>
 
 
+</section>
 
  ]]></description>
+  <category>Micro</category>
   <category>R</category>
   <guid>https://your-website-url.example.com/posts/test_post/</guid>
   <pubDate>Sat, 01 Aug 2026 07:00:00 GMT</pubDate>
