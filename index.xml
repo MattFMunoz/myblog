@@ -14,7 +14,7 @@
 <item>
   <title>Utility and its function</title>
   <dc:creator>Matthew Munoz</dc:creator>
-  <link>https://your-website-url.example.com/posts/test_post/</link>
+  <link>https://your-website-url.example.com/posts/utility/</link>
   <description><![CDATA[ 
 
 
@@ -22,21 +22,18 @@
 
 
 <p>A quick little demonstration of utility functions</p>
-<p><img src="https://your-website-url.example.com/posts/test_post/thumbnail.jpg" class="img-fluid"></p>
+<p><img src="https://your-website-url.example.com/posts/utility/thumbnail.jpg" class="img-fluid"></p>
 <p>We are all well aware of utility functions. So aware that you may question why something like this is even necessary. Many would argue that it is not. But this is primarily to serve as a refresh to myself.</p>
-<p>There are some notational things that do require some explanation prior to this refresh, so let’s brush up!</p>
-<section id="here-we-go" class="level2">
-<h2 class="anchored" data-anchor-id="here-we-go">Here we go</h2>
-<p>Well, let’s get a little bit abstract. Suppose there are two good, x and y that exist on the set of mutually exclusive alternatives. That is to say x, y represent two choices that you can not choose at once. Perhaps you want to go to sleep or go on a run or change your oil or etc. How could you do those simultaneously? The point being is that you can only pick one or the other. This is notationally equivalent to writing <img src="https://latex.codecogs.com/png.latex?%20x,y%20%5Cin%20X%20%20"> Now we can introduce our so-caled (weak) preference relation <img src="https://latex.codecogs.com/png.latex?%5Csuccsim">. This is a “binary relation on the set of alternatives.” For our purposes, this just means that you can compare each element in the set. If x is weakly preferred to y (x <img src="https://latex.codecogs.com/png.latex?%5Csuccsim"> y), we can say that “x is at least as good as y.” Awesome.</p>
+<p>There are some notational things that do require some explanation prior to this refresh, so let’s brush up! ## Here we go</p>
+<p>Well, let’s get a little bit abstract. Suppose there are two good, x and y that exist on the set of mutually exclusive alternatives. That is to say x, y represent two choices that you can not choose at once. Perhaps you want to go to sleep or go on a run or change your oil or etc. How could you do those simultaneously? The point being is that you can only pick one or the other. This is notationally equivalent to writing <img src="https://latex.codecogs.com/png.latex?%20x,y%20%5Cin%20X%20%20"> Now we can introduce our so-called (weak) preference relation <img src="https://latex.codecogs.com/png.latex?%5Csuccsim">. This is a “binary relation on the set of alternatives.” For our purposes, this just means that you can compare each element in the set. If x is weakly prefered to y (x <img src="https://latex.codecogs.com/png.latex?%5Csuccsim"> y), we can say that “x is at least as good as y.” Awesome.</p>
 <p>The one thing about economics that we assume above all else is rationality. So we are going to assume that individual preferences are rational. To assume our assumption we must… make two assumptions about <img src="https://latex.codecogs.com/png.latex?%5Csuccsim"> : completeness and transitivity.</p>
 <ol type="i">
-<li>Completeness: <img src="https://latex.codecogs.com/png.latex?%5Cforall%20x,y%20%5Cin%20X"> we have that x <img src="https://latex.codecogs.com/png.latex?%5Csuccsim"> y or that y <img src="https://latex.codecogs.com/png.latex?%5Csuccsim"> y or both</li>
-<li>Transitvity: <img src="https://latex.codecogs.com/png.latex?%5Cforall%20x,y,z%20%5Cin%20X"> we have that if x <img src="https://latex.codecogs.com/png.latex?%5Csuccsim"> y and y <img src="https://latex.codecogs.com/png.latex?%5Csuccsim"> z, then x <img src="https://latex.codecogs.com/png.latex?%5Csuccsim"> z</li>
+<li>Completeness: <img src="https://latex.codecogs.com/png.latex?%5Cforall%20x,y%20%5Cin%20X"> we have that x <img src="https://latex.codecogs.com/png.latex?%5Csuccsim"> y or that y <img src="https://latex.codecogs.com/png.latex?%5Csuccsim"> x or both</li>
+<li>Transitivity: <img src="https://latex.codecogs.com/png.latex?%5Cforall%20x,y,z%20%5Cin%20X"> we have that if x <img src="https://latex.codecogs.com/png.latex?%5Csuccsim"> y and y <img src="https://latex.codecogs.com/png.latex?%5Csuccsim"> z, then x <img src="https://latex.codecogs.com/png.latex?%5Csuccsim"> z</li>
 </ol>
-<p>This is fairly cool, I would say. Our consumer (by property of completenss) has a ranking of elements within the set, and (by property of transitivity) the ranking is consistent.</p>
-<p>This is kind of a strong assumption, however. Imagine you, yourself were in a situation where… let’s say you are at Home Depot picking out a color for your kitchen. There are so many colors, so many choices! How can you look at them all and estalish a ranking? Ah! But our individual consumer would have no problem. They would be able to walk into Home Depot, look at all the color opitons, rank them all, and have those rankings be consistent. That is far, far easier said than done.</p>
+<p>This is fairly cool, I would say. Our consumer (by property of completeness) has a ranking of elements within the set, and (by property of transitivity) the ranking is consistent.</p>
+<p>This is kind of a strong assumption, however. Imagine you, yourself were in a situation where… let’s say you are at Home Depot picking out a color for your kitchen. There are so many colors, so many choices! How can you look at them all and establish a ranking? Ah! But our individual consumer would have no problem. They would be able to walk into Home Depot, look at all the color options, rank them all, and have those rankings be consistent. That is far, far easier said than done.</p>
 <p>Again, aside, etc. That should be the bare minimum necessary to go over utility functions.</p>
-</section>
 <section id="utility-functions" class="level2">
 <h2 class="anchored" data-anchor-id="utility-functions">Utility functions!</h2>
 <p>A utility function is something a bit abstract, but not to hard to wrap your mind around. The utility function maps each element from the set of alternatives onto the set of real numbers. This allows us to rank othe elements in accordance to the individuals preference.</p>
@@ -144,14 +141,14 @@ font-style: inherit;">"Cats"</span>, <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Dogs"</span>, <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"x preffered to y"</span>,</span>
+font-style: inherit;">"x preferred to y"</span>,</span>
 <span id="cb1-24">  <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Bats"</span>, <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Frogs"</span>, <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"x preffered to y"</span>,</span>
+font-style: inherit;">"x preferred to y"</span>,</span>
 <span id="cb1-25">  <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Hats"</span>, <span class="st" style="color: #20794D;
@@ -206,12 +203,12 @@ font-style: italic;">## you can see that the order is preserved </span></span></
 <pre><code># A tibble: 3 × 9
   x     y     preference         u_x   u_y u_great   v_x   v_y v_great
   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;            &lt;int&gt; &lt;int&gt; &lt;lgl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;lgl&gt;  
-1 Cats  Dogs  x preffered to y     6     3 TRUE       12     6 TRUE   
-2 Bats  Frogs x preffered to y     6     3 TRUE       12     6 TRUE   
-3 Hats  Logs  x preferred to y     6     3 TRUE       12     6 TRUE   </code></pre>
+1 Cats  Dogs  x preferred to y     9     1 TRUE       18     2 TRUE   
+2 Bats  Frogs x preferred to y     9     1 TRUE       18     2 TRUE   
+3 Hats  Logs  x preferred to y     9     1 TRUE       18     2 TRUE   </code></pre>
 </div>
 </div>
-<p>Yes, if you are wondering, I just wanted to show that R is capable of making funciton factories. That was the primary motivatoin in writing this. Putting that aside, let’s prove what that code is showing.</p>
+<p>Yes, if you are wondering, I just wanted to show that R is capable of making function factories. That was the primary motivation in writing this. Putting that aside, let’s prove what that code is showing.</p>
 </section>
 <section id="proof" class="level2">
 <h2 class="anchored" data-anchor-id="proof">Proof</h2>
@@ -219,7 +216,7 @@ font-style: italic;">## you can see that the order is preserved </span></span></
 <p>We can prove this directly. Assume that f is a strictly increasing function and u(x) is a utility function representing preference relation.</p>
 <p>By definition of strictly increasing, we know that for any <img src="https://latex.codecogs.com/png.latex?x_2%20%3E%20x_1"> that <img src="https://latex.codecogs.com/png.latex?f(x_2)%20%3E%20f(x_1)"></p>
 <p>By definition of a utility function representing preference relation, we know that <img src="https://latex.codecogs.com/png.latex?x%20%5Csuccsim%20y%20%5Ciff%20u(x)%20%5Cge%20u(y)">.</p>
-<p>Observe: Consider the utility function u (by our assumption) <img src="https://latex.codecogs.com/png.latex?%20x%20%5Csuccsim%20y%20%5Ciff%20u(x)%20%5Cge%20u(y)"> We define v(x) as f(u(x)). And since f is a strictly increasing funcion denoted by <img src="https://latex.codecogs.com/png.latex?%20x_2%20%3E%20x_1%20%5Ciff%20f(x_2)%20%3E%20f(x_1)%20"> which by contrapositive is logically equivalent to <img src="https://latex.codecogs.com/png.latex?%20x_1%20%5Cge%20x_2%20%5Ciff%20f(x_1)%20%5Cge%20f(x_2)"> Since in our utility function we have u(x) <img src="https://latex.codecogs.com/png.latex?%5Cge"> u(y), we can then say that f(u(x)) <img src="https://latex.codecogs.com/png.latex?%5Cge"> f(u(y)), which is equivalent to: <img src="https://latex.codecogs.com/png.latex?%20u(x)%20%5Cge%20u(y)%20%5Ciff%20v(x)%20%5Cge%20v(y)"> By definition of v(x) = f(u(x))! Thus we can say <img src="https://latex.codecogs.com/png.latex?%20x%20%5Csuccsim%20y%20%5Ciff%20u(x)%20%5Cge%20u(y)%20%5Ciff%20v(x)%20%5Cge%20v(y)%20"> which means <img src="https://latex.codecogs.com/png.latex?%20x%20%5Csuccsim%20y%20%5Ciff%20v(x)%20%5Cge%20v(y)%20"> Thus v is a utility function representing preference relation!</p>
+<p>Observe: Consider the utility function u (by our assumption) <img src="https://latex.codecogs.com/png.latex?%20x%20%5Csuccsim%20y%20%5Ciff%20u(x)%20%5Cge%20u(y)"> We define v(x) as f(u(x)). And since f is a strictly increasing function denoted by <img src="https://latex.codecogs.com/png.latex?%20x_2%20%3E%20x_1%20%5Ciff%20f(x_2)%20%3E%20f(x_1)%20"> which by contrapositive is logically equivalent to <img src="https://latex.codecogs.com/png.latex?%20x_1%20%5Cge%20x_2%20%5Ciff%20f(x_1)%20%5Cge%20f(x_2)"> Since in our utility function we have u(x) <img src="https://latex.codecogs.com/png.latex?%5Cge"> u(y), we can then say that f(u(x)) <img src="https://latex.codecogs.com/png.latex?%5Cge"> f(u(y)), which is equivalent to: <img src="https://latex.codecogs.com/png.latex?%20u(x)%20%5Cge%20u(y)%20%5Ciff%20v(x)%20%5Cge%20v(y)"> By definition of v(x) = f(u(x))! Thus we can say <img src="https://latex.codecogs.com/png.latex?%20x%20%5Csuccsim%20y%20%5Ciff%20u(x)%20%5Cge%20u(y)%20%5Ciff%20v(x)%20%5Cge%20v(y)%20"> which means <img src="https://latex.codecogs.com/png.latex?%20x%20%5Csuccsim%20y%20%5Ciff%20v(x)%20%5Cge%20v(y)%20"> Thus v is a utility function representing preference relation!</p>
 
 
 </section>
@@ -227,7 +224,7 @@ font-style: italic;">## you can see that the order is preserved </span></span></
  ]]></description>
   <category>Micro</category>
   <category>R</category>
-  <guid>https://your-website-url.example.com/posts/test_post/</guid>
+  <guid>https://your-website-url.example.com/posts/utility/</guid>
   <pubDate>Sat, 01 Aug 2026 07:00:00 GMT</pubDate>
 </item>
 <item>
