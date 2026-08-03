@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Matthew Munoz">
+<meta name="dcterms.date" content="2026-08-01">
 
-<title>Matthew Munoz</title>
+<title>Utility and its function – verano magnifico</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,25 +25,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-a0f9fd0d421825b736dc1bbcbcba2219.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-a0f9fd0d421825b736dc1bbcbcba2219.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,19 +108,48 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Matthew Munoz</span>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">verano magnifico</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -92,12 +159,8 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./blog.html"> 
-<span class="menu-text">Blog</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./projects.html"> 
-<span class="menu-text">Projects</span></a>
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">Matthew Munoz</span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/MattFMunoz"> <i class="bi bi-github" role="img">
@@ -112,46 +175,132 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Utility and its function</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">Micro</div>
+                <div class="quarto-category">R</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Matthew Munoz </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">August 1, 2026</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<div class="quarto-about-broadside column-page">
-  <div class="about-main">
-    <div class="about-entity" style="background-image: url('profile.jpg')"></div>
-    <div class="about-contents"><header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Matthew Munoz</h1>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<p>A quick little demonstration of utility functions</p>
+<p><img src="thumbnail.jpg" class="img-fluid"></p>
+<p>We are all well aware of utility functions. So aware that you may question why something like this is even necessary. Many would argue that it is not. But this is primarily to serve as a refresh to myself.</p>
+<p>There are some notational things that do require some explanation prior to this refresh, so let’s brush up! ## Here we go</p>
+<p>Well, let’s get a little bit abstract. Suppose there are two good, x and y that exist on the set of mutually exclusive alternatives. That is to say x, y represent two choices that you can not choose at once. Perhaps you want to go to sleep or go on a run or change your oil or etc. How could you do those simultaneously? The point being is that you can only pick one or the other. This is notationally equivalent to writing <span class="math display">\[ x,y \in X  \]</span> Now we can introduce our so-called (weak) preference relation <span class="math inline">\(\succsim\)</span>. This is a “binary relation on the set of alternatives.” For our purposes, this just means that you can compare each element in the set. If x is weakly prefered to y (x <span class="math inline">\(\succsim\)</span> y), we can say that “x is at least as good as y.” Awesome.</p>
+<p>The one thing about economics that we assume above all else is rationality. So we are going to assume that individual preferences are rational. To assume our assumption we must… make two assumptions about <span class="math inline">\(\succsim\)</span> : completeness and transitivity.</p>
+<ol type="i">
+<li>Completeness: <span class="math inline">\(\forall x,y \in X\)</span> we have that x <span class="math inline">\(\succsim\)</span> y or that y <span class="math inline">\(\succsim\)</span> x or both</li>
+<li>Transitivity: <span class="math inline">\(\forall x,y,z \in X\)</span> we have that if x <span class="math inline">\(\succsim\)</span> y and y <span class="math inline">\(\succsim\)</span> z, then x <span class="math inline">\(\succsim\)</span> z</li>
+</ol>
+<p>This is fairly cool, I would say. Our consumer (by property of completeness) has a ranking of elements within the set, and (by property of transitivity) the ranking is consistent.</p>
+<p>This is kind of a strong assumption, however. Imagine you, yourself were in a situation where… let’s say you are at Home Depot picking out a color for your kitchen. There are so many colors, so many choices! How can you look at them all and establish a ranking? Ah! But our individual consumer would have no problem. They would be able to walk into Home Depot, look at all the color options, rank them all, and have those rankings be consistent. That is far, far easier said than done.</p>
+<p>Again, aside, etc. That should be the bare minimum necessary to go over utility functions.</p>
+<section id="utility-functions" class="level2">
+<h2 class="anchored" data-anchor-id="utility-functions">Utility functions!</h2>
+<p>A utility function is something a bit abstract, but not to hard to wrap your mind around. The utility function maps each element from the set of alternatives onto the set of real numbers. This allows us to rank othe elements in accordance to the individuals preference.</p>
+<p><span class="math display">\[u:X \mapsto  \mathbb{R}\]</span> is a function representing preference relation <span class="math inline">\(\succsim\)</span> if for all x, y <span class="math inline">\(\in\)</span> X <span class="math display">\[ x \succsim y \iff u(x) \ge u(y)\]</span> As you will soon come to know, a utility function that represents a preference relation <span class="math inline">\(\succsim\)</span> is not unique. For any strictly increasing function <span class="math inline">\(f: \mathbb{R} \mapsto  \mathbb{R}\)</span>, v(x) = f(u(x)). As long as the ranking of the alternatives is preserved, the utility function is valid!</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="do">## for our purposes, we will make x weakly preferred to y</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>u_x  <span class="ot">&lt;-</span>  <span class="cf">function</span>(x){</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map_dbl</span>(x, <span class="sc">~</span> {<span class="fu">set.seed</span>(<span class="fu">nchar</span>(.x)); <span class="fu">sample</span>(<span class="dv">5</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">1</span>)})</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>u_y <span class="ot">&lt;-</span>  <span class="cf">function</span>(y){</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map_dbl</span>(y, <span class="sc">~</span> {<span class="fu">set.seed</span>(<span class="fu">nchar</span>(.x)); <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">1</span>)})</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="do">## our strictly increasing function</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(u){</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="cf">function</span>(x) x <span class="sc">*</span> <span class="dv">2</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="do">## should preserve the order</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>v_x <span class="ot">&lt;-</span> <span class="fu">f</span>(u_x)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>v_y <span class="ot">&lt;-</span> <span class="fu">f</span>(u_y)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>my_tibble <span class="ot">&lt;-</span>  tibble<span class="sc">::</span><span class="fu">tribble</span>( </span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>x, <span class="sc">~</span>y, <span class="sc">~</span>preference,</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Cats"</span>, <span class="st">"Dogs"</span>, <span class="st">"x preferred to y"</span>,</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Brats"</span>, <span class="st">"Frogs"</span>, <span class="st">"x preferred to y"</span>,</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Korats"</span>, <span class="st">"Barlogs"</span>, <span class="st">"x preferred to y"</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>my_tibble <span class="ot">&lt;-</span> my_tibble <span class="sc">|&gt;</span> </span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">u_x =</span> <span class="fu">u_x</span>(x), <span class="at">u_y =</span> <span class="fu">u_y</span>(y),</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">u_great =</span> u_x <span class="sc">&gt;=</span> u_y,</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">v_x =</span> <span class="fu">v_x</span>(u_x), <span class="at">v_y =</span> <span class="fu">v_y</span>(u_y),</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">v_great =</span> v_x <span class="sc">&gt;=</span> v_y)</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>my_tibble <span class="do">## you can see that the order is preserved </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 9
+  x      y       preference         u_x   u_y u_great   v_x   v_y v_great
+  &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;            &lt;dbl&gt; &lt;dbl&gt; &lt;lgl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;lgl&gt;  
+1 Cats   Dogs    x preferred to y     7     3 TRUE       14     6 TRUE   
+2 Brats  Frogs   x preferred to y     6     2 TRUE       12     4 TRUE   
+3 Korats Barlogs x preferred to y     9     2 TRUE       18     4 TRUE   </code></pre>
 </div>
-<div class="quarto-title-meta">
-  </div>
-</header><main class="content" id="quarto-document-content">
-<p>“If the mind is mysterious, then the world is mystical; and yet the mind is real and our world is reality” - C’est Moi</p>
-<section id="lets-not-get-to-ahead-of-our-my-selves-self" class="level2">
-<h2 data-anchor-id="lets-not-get-to-ahead-of-our-my-selves-self">Let’s not get to ahead of our (my) selves (self)</h2>
-<p>I am a current economics student and hope to demonstrate my ability to parse and analyze data in a clear and concise manner.</p>
-<p>The world is wonderful and measurable. If you pick apart the particulars, you can be left with an idea of some universal.</p>
-<p>That notwithstanding, you can mainly find in-progress or completed projects here. Maybe a status update - or a life update (if I ever feel like that). Many explorations shall be done in R, regarding economics especially.</p>
+</div>
+<p>Voila!</p>
+</section>
+<section id="proof" class="level2">
+<h2 class="anchored" data-anchor-id="proof">Proof</h2>
+<p>if <span class="math inline">\(f: \mathbb{R} \mapsto  \mathbb{R}\)</span>, and u:X <span class="math inline">\(\mapsto  \mathbb{R}\)</span> is a utility function representing preference relation <span class="math inline">\(\succsim\)</span>, then the function v:X <span class="math inline">\(\mapsto  \mathbb{R}\)</span> defined by v(x) = f(u(x)) is also a utility function representing preference relation <span class="math inline">\(\succsim\)</span>.</p>
+<p>We can prove this directly. Assume that f is a strictly increasing function and u(x) is a utility function representing preference relation.</p>
+<p>By definition of strictly increasing, we know that for any <span class="math inline">\(x_2 &gt; x_1\)</span> that <span class="math inline">\(f(x_2) &gt; f(x_1)\)</span></p>
+<p>By definition of a utility function representing preference relation, we know that <span class="math inline">\(x \succsim y \iff u(x) \ge u(y)\)</span>.</p>
+<p>Observe: Consider the utility function u (by our assumption) <span class="math display">\[ x \succsim y \iff u(x) \ge u(y)\]</span> We define v(x) as f(u(x)). And since f is a strictly increasing function denoted by <span class="math display">\[ x_2 &gt; x_1 \iff f(x_2) &gt; f(x_1) \]</span> which by contrapositive is logically equivalent to <span class="math display">\[ x_1 \ge x_2 \iff f(x_1) \ge f(x_2)\]</span> Since in our utility function we have u(x) <span class="math inline">\(\ge\)</span> u(y), we can then say that f(u(x)) <span class="math inline">\(\ge\)</span> f(u(y)), which is equivalent to: <span class="math display">\[ u(x) \ge u(y) \iff v(x) \ge v(y)\]</span> By definition of v(x) = f(u(x))! Thus we can say <span class="math display">\[ x \succsim y \iff u(x) \ge u(y) \iff v(x) \ge v(y) \]</span> which means <span class="math display">\[ x \succsim y \iff v(x) \ge v(y) \]</span> Thus v is a utility function representing preference relation!</p>
 
 
 </section>
-</main></div>
-  </div>
-  <div class="about-links">
-  <a href="https://www.linkedin.com/in/matthew-munoz-74b96a20b/" class="about-link" rel="" target="">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text">LinkedIn</span>
-  </a>
-  <a href="https://github.com/MattFMunoz" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">Github</span>
-  </a>
-</div>
-</div>
- <!-- /main -->
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     
