@@ -236,51 +236,49 @@ window.Quarto = {
 <p>A utility function is something a bit abstract, but not to hard to wrap your mind around. The utility function maps each element from the set of alternatives onto the set of real numbers. This allows us to rank othe elements in accordance to the individuals preference.</p>
 <p><span class="math display">\[u:X \mapsto  \mathbb{R}\]</span> is a function representing preference relation <span class="math inline">\(\succsim\)</span> if for all x, y <span class="math inline">\(\in\)</span> X <span class="math display">\[ x \succsim y \iff u(x) \ge u(y)\]</span> As you will soon come to know, a utility function that represents a preference relation <span class="math inline">\(\succsim\)</span> is not unique. For any strictly increasing function <span class="math inline">\(f: \mathbb{R} \mapsto  \mathbb{R}\)</span>, v(x) = f(u(x)). As long as the ranking of the alternatives is preserved, the utility function is valid!</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">## for our purposes, we will make x weakly preferred to y</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>u_x <span class="ot">&lt;-</span>  <span class="cf">function</span>(x){ </span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>   <span class="fu">nchar</span>(x)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>   <span class="fu">sample</span>(<span class="dv">5</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">1</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="do">## for our purposes, we will make x weakly preferred to y</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>u_x  <span class="ot">&lt;-</span>  <span class="cf">function</span>(x){</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map_dbl</span>(x, <span class="sc">~</span> {<span class="fu">set.seed</span>(<span class="fu">nchar</span>(.x)); <span class="fu">sample</span>(<span class="dv">5</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">1</span>)})</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>u_y <span class="ot">&lt;-</span>  <span class="cf">function</span>(y){</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">&lt;-</span>  <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">1</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map_dbl</span>(y, <span class="sc">~</span> {<span class="fu">set.seed</span>(<span class="fu">nchar</span>(.x)); <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">1</span>)})</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="do">## our strictly increasing function</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(u){</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    x <span class="sc">*</span> <span class="dv">2</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  result</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="do">## should preserve the order</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>v_x <span class="ot">&lt;-</span> <span class="fu">f</span>(u_x)</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>v_y <span class="ot">&lt;-</span> <span class="fu">f</span>(u_y)</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>my_tibble <span class="ot">&lt;-</span>  tibble<span class="sc">::</span><span class="fu">tribble</span>( </span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>x, <span class="sc">~</span>y, <span class="sc">~</span>preference,</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Cats"</span>, <span class="st">"Dogs"</span>, <span class="st">"x preferred to y"</span>,</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Bats"</span>, <span class="st">"Frogs"</span>, <span class="st">"x preferred to y"</span>,</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Hats"</span>, <span class="st">"Logs"</span>, <span class="st">"x preferred to y"</span></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>my_tibble <span class="ot">&lt;-</span> my_tibble <span class="sc">|&gt;</span> </span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">u_x =</span> <span class="fu">u_x</span>(x), <span class="at">u_y =</span> <span class="fu">u_y</span>(y),</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">u_great =</span> u_x <span class="sc">&gt;</span> u_y,</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">v_x =</span> <span class="fu">v_x</span>(u_x), <span class="at">v_y =</span> <span class="fu">v_y</span>(u_y),</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">v_great =</span> v_x <span class="sc">&gt;</span> v_y)</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>my_tibble <span class="do">## you can see that the order is preserved </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(u){</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="cf">function</span>(x) x <span class="sc">*</span> <span class="dv">2</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="do">## should preserve the order</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>v_x <span class="ot">&lt;-</span> <span class="fu">f</span>(u_x)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>v_y <span class="ot">&lt;-</span> <span class="fu">f</span>(u_y)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>my_tibble <span class="ot">&lt;-</span>  tibble<span class="sc">::</span><span class="fu">tribble</span>( </span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>x, <span class="sc">~</span>y, <span class="sc">~</span>preference,</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Cats"</span>, <span class="st">"Dogs"</span>, <span class="st">"x preferred to y"</span>,</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Brats"</span>, <span class="st">"Frogs"</span>, <span class="st">"x preferred to y"</span>,</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Korats"</span>, <span class="st">"Barlogs"</span>, <span class="st">"x preferred to y"</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>my_tibble <span class="ot">&lt;-</span> my_tibble <span class="sc">|&gt;</span> </span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">u_x =</span> <span class="fu">u_x</span>(x), <span class="at">u_y =</span> <span class="fu">u_y</span>(y),</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">u_great =</span> u_x <span class="sc">&gt;=</span> u_y,</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">v_x =</span> <span class="fu">v_x</span>(u_x), <span class="at">v_y =</span> <span class="fu">v_y</span>(u_y),</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">v_great =</span> v_x <span class="sc">&gt;=</span> v_y)</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>my_tibble <span class="do">## you can see that the order is preserved </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 9
-  x     y     preference         u_x   u_y u_great   v_x   v_y v_great
-  &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;            &lt;int&gt; &lt;int&gt; &lt;lgl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;lgl&gt;  
-1 Cats  Dogs  x preferred to y    10     3 TRUE       20     6 TRUE   
-2 Bats  Frogs x preferred to y    10     3 TRUE       20     6 TRUE   
-3 Hats  Logs  x preferred to y    10     3 TRUE       20     6 TRUE   </code></pre>
+  x      y       preference         u_x   u_y u_great   v_x   v_y v_great
+  &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;            &lt;dbl&gt; &lt;dbl&gt; &lt;lgl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;lgl&gt;  
+1 Cats   Dogs    x preferred to y     7     3 TRUE       14     6 TRUE   
+2 Brats  Frogs   x preferred to y     6     2 TRUE       12     4 TRUE   
+3 Korats Barlogs x preferred to y     9     2 TRUE       18     4 TRUE   </code></pre>
 </div>
 </div>
-<p>Yes, if you are wondering, I just wanted to show that R is capable of making function factories. That was the primary motivation in writing this. Putting that aside, let’s prove what that code is showing.</p>
+<p>Voi la!</p>
 </section>
 <section id="proof" class="level2">
 <h2 class="anchored" data-anchor-id="proof">Proof</h2>
@@ -288,7 +286,7 @@ window.Quarto = {
 <p>We can prove this directly. Assume that f is a strictly increasing function and u(x) is a utility function representing preference relation.</p>
 <p>By definition of strictly increasing, we know that for any <span class="math inline">\(x_2 &gt; x_1\)</span> that <span class="math inline">\(f(x_2) &gt; f(x_1)\)</span></p>
 <p>By definition of a utility function representing preference relation, we know that <span class="math inline">\(x \succsim y \iff u(x) \ge u(y)\)</span>.</p>
-<p>Observe: Consider the utility function u (by our assumption) <span class="math display">\[ x \succsim y \iff u(x) \ge u(y)\]</span> We define v(x) as f(u(x)). And since f is a strictly increasing function denoted by <span class="math display">\[ x_2 &gt; x_1 \iff f(x_2) &gt; f(x_1) \]</span> which by contrapositive is logically equivalent to <span class="math display">\[ x_1 \ge x_2 \iff f(x_1) \ge f(x_2)\]</span> Since in our utility function we have u(x) <span class="math inline">\(\ge\)</span> u(y), we can then say that f(u(x)) <span class="math inline">\(\ge\)</span> f(u(y)), which is equivalent to: <span class="math display">\[ u(x) \ge u(y) \iff v(x) \ge v(y)\]</span> By definition of v(x) = f(u(x))! Thus we can say <span class="math display">\[ x \succsim y \iff u(x) \ge u(y) \iff v(x) \ge v(y) \]</span> which means <span class="math display">\[ x \succsim y \iff v(x) \ge v(y) \]</span> Thus v is a utility function representing preference relation! fadadsf</p>
+<p>Observe: Consider the utility function u (by our assumption) <span class="math display">\[ x \succsim y \iff u(x) \ge u(y)\]</span> We define v(x) as f(u(x)). And since f is a strictly increasing function denoted by <span class="math display">\[ x_2 &gt; x_1 \iff f(x_2) &gt; f(x_1) \]</span> which by contrapositive is logically equivalent to <span class="math display">\[ x_1 \ge x_2 \iff f(x_1) \ge f(x_2)\]</span> Since in our utility function we have u(x) <span class="math inline">\(\ge\)</span> u(y), we can then say that f(u(x)) <span class="math inline">\(\ge\)</span> f(u(y)), which is equivalent to: <span class="math display">\[ u(x) \ge u(y) \iff v(x) \ge v(y)\]</span> By definition of v(x) = f(u(x))! Thus we can say <span class="math display">\[ x \succsim y \iff u(x) \ge u(y) \iff v(x) \ge v(y) \]</span> which means <span class="math display">\[ x \succsim y \iff v(x) \ge v(y) \]</span> Thus v is a utility function representing preference relation!</p>
 
 
 </section>
