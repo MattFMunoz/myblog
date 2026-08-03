@@ -47,10 +47,11 @@ background-color: null;
 font-style: inherit;">&lt;-</span>  <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
-font-style: inherit;">function</span>(x){</span>
-<span id="cb1-3">  x <span class="ot" style="color: #003B4F;
+font-style: inherit;">function</span>(x){ </span>
+<span id="cb1-3">   <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+font-style: inherit;">nchar</span>(x)</span>
+<span id="cb1-4">   <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">sample</span>(<span class="dv" style="color: #AD0000;
 background-color: null;
@@ -61,15 +62,15 @@ background-color: null;
 font-style: inherit;">10</span>, <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span>)</span>
-<span id="cb1-4">}</span>
-<span id="cb1-5"></span>
-<span id="cb1-6">u_y <span class="ot" style="color: #003B4F;
+<span id="cb1-5">}</span>
+<span id="cb1-6"></span>
+<span id="cb1-7">u_y <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span>  <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">function</span>(y){</span>
-<span id="cb1-7">  y <span class="ot" style="color: #003B4F;
+<span id="cb1-8">  y <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span>  <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -82,92 +83,92 @@ background-color: null;
 font-style: inherit;">5</span>, <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span>)</span>
-<span id="cb1-8">}</span>
-<span id="cb1-9"></span>
-<span id="cb1-10"><span class="do" style="color: #5E5E5E;
+<span id="cb1-9">}</span>
+<span id="cb1-10"></span>
+<span id="cb1-11"><span class="do" style="color: #5E5E5E;
 background-color: null;
 font-style: italic;">## our strictly increasing function</span></span>
-<span id="cb1-11">f <span class="ot" style="color: #003B4F;
+<span id="cb1-12">f <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">function</span>(u){</span>
-<span id="cb1-12">  result <span class="ot" style="color: #003B4F;
+<span id="cb1-13">  result <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">function</span>(x){</span>
-<span id="cb1-13">    x <span class="sc" style="color: #5E5E5E;
+<span id="cb1-14">    x <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">*</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">2</span></span>
-<span id="cb1-14">  }</span>
-<span id="cb1-15">  result</span>
-<span id="cb1-16">}</span>
-<span id="cb1-17"><span class="do" style="color: #5E5E5E;
+<span id="cb1-15">  }</span>
+<span id="cb1-16">  result</span>
+<span id="cb1-17">}</span>
+<span id="cb1-18"><span class="do" style="color: #5E5E5E;
 background-color: null;
 font-style: italic;">## should preserve the order</span></span>
-<span id="cb1-18">v_x <span class="ot" style="color: #003B4F;
+<span id="cb1-19">v_x <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">f</span>(u_x)</span>
-<span id="cb1-19">v_y <span class="ot" style="color: #003B4F;
+<span id="cb1-20">v_y <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">f</span>(u_y)</span>
-<span id="cb1-20"></span>
-<span id="cb1-21">my_tibble <span class="ot" style="color: #003B4F;
+<span id="cb1-21"></span>
+<span id="cb1-22">my_tibble <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span>  tibble<span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">tribble</span>( </span>
-<span id="cb1-22">  <span class="sc" style="color: #5E5E5E;
+<span id="cb1-23">  <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">~</span>x, <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">~</span>y, <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">~</span>preference,</span>
-<span id="cb1-23">  <span class="st" style="color: #20794D;
+<span id="cb1-24">  <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Cats"</span>, <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Dogs"</span>, <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"x preferred to y"</span>,</span>
-<span id="cb1-24">  <span class="st" style="color: #20794D;
+<span id="cb1-25">  <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Bats"</span>, <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Frogs"</span>, <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"x preferred to y"</span>,</span>
-<span id="cb1-25">  <span class="st" style="color: #20794D;
+<span id="cb1-26">  <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Hats"</span>, <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Logs"</span>, <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"x preferred to y"</span></span>
-<span id="cb1-26">)</span>
-<span id="cb1-27">my_tibble <span class="ot" style="color: #003B4F;
+<span id="cb1-27">)</span>
+<span id="cb1-28">my_tibble <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> my_tibble <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span> </span>
-<span id="cb1-28">  dplyr<span class="sc" style="color: #5E5E5E;
+<span id="cb1-29">  dplyr<span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">mutate</span>(</span>
-<span id="cb1-29">    <span class="at" style="color: #657422;
+<span id="cb1-30">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">u_x =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -176,12 +177,12 @@ background-color: null;
 font-style: inherit;">u_y =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">u_y</span>(y),</span>
-<span id="cb1-30">    <span class="at" style="color: #657422;
+<span id="cb1-31">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">u_great =</span> u_x <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&gt;</span> u_y,</span>
-<span id="cb1-31">    <span class="at" style="color: #657422;
+<span id="cb1-32">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">v_x =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -190,22 +191,22 @@ background-color: null;
 font-style: inherit;">v_y =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">v_y</span>(u_y),</span>
-<span id="cb1-32">    <span class="at" style="color: #657422;
+<span id="cb1-33">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">v_great =</span> v_x <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&gt;</span> v_y)</span>
-<span id="cb1-33"></span>
-<span id="cb1-34">my_tibble <span class="do" style="color: #5E5E5E;
+<span id="cb1-34"></span>
+<span id="cb1-35">my_tibble <span class="do" style="color: #5E5E5E;
 background-color: null;
 font-style: italic;">## you can see that the order is preserved </span></span></code></pre></div></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 9
   x     y     preference         u_x   u_y u_great   v_x   v_y v_great
   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;            &lt;int&gt; &lt;int&gt; &lt;lgl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;lgl&gt;  
-1 Cats  Dogs  x preferred to y     9     1 TRUE       18     2 TRUE   
-2 Bats  Frogs x preferred to y     9     1 TRUE       18     2 TRUE   
-3 Hats  Logs  x preferred to y     9     1 TRUE       18     2 TRUE   </code></pre>
+1 Cats  Dogs  x preferred to y    10     3 TRUE       20     6 TRUE   
+2 Bats  Frogs x preferred to y    10     3 TRUE       20     6 TRUE   
+3 Hats  Logs  x preferred to y    10     3 TRUE       20     6 TRUE   </code></pre>
 </div>
 </div>
 <p>Yes, if you are wondering, I just wanted to show that R is capable of making function factories. That was the primary motivation in writing this. Putting that aside, let’s prove what that code is showing.</p>
@@ -216,7 +217,7 @@ font-style: italic;">## you can see that the order is preserved </span></span></
 <p>We can prove this directly. Assume that f is a strictly increasing function and u(x) is a utility function representing preference relation.</p>
 <p>By definition of strictly increasing, we know that for any <img src="https://latex.codecogs.com/png.latex?x_2%20%3E%20x_1"> that <img src="https://latex.codecogs.com/png.latex?f(x_2)%20%3E%20f(x_1)"></p>
 <p>By definition of a utility function representing preference relation, we know that <img src="https://latex.codecogs.com/png.latex?x%20%5Csuccsim%20y%20%5Ciff%20u(x)%20%5Cge%20u(y)">.</p>
-<p>Observe: Consider the utility function u (by our assumption) <img src="https://latex.codecogs.com/png.latex?%20x%20%5Csuccsim%20y%20%5Ciff%20u(x)%20%5Cge%20u(y)"> We define v(x) as f(u(x)). And since f is a strictly increasing function denoted by <img src="https://latex.codecogs.com/png.latex?%20x_2%20%3E%20x_1%20%5Ciff%20f(x_2)%20%3E%20f(x_1)%20"> which by contrapositive is logically equivalent to <img src="https://latex.codecogs.com/png.latex?%20x_1%20%5Cge%20x_2%20%5Ciff%20f(x_1)%20%5Cge%20f(x_2)"> Since in our utility function we have u(x) <img src="https://latex.codecogs.com/png.latex?%5Cge"> u(y), we can then say that f(u(x)) <img src="https://latex.codecogs.com/png.latex?%5Cge"> f(u(y)), which is equivalent to: <img src="https://latex.codecogs.com/png.latex?%20u(x)%20%5Cge%20u(y)%20%5Ciff%20v(x)%20%5Cge%20v(y)"> By definition of v(x) = f(u(x))! Thus we can say <img src="https://latex.codecogs.com/png.latex?%20x%20%5Csuccsim%20y%20%5Ciff%20u(x)%20%5Cge%20u(y)%20%5Ciff%20v(x)%20%5Cge%20v(y)%20"> which means <img src="https://latex.codecogs.com/png.latex?%20x%20%5Csuccsim%20y%20%5Ciff%20v(x)%20%5Cge%20v(y)%20"> Thus v is a utility function representing preference relation!</p>
+<p>Observe: Consider the utility function u (by our assumption) <img src="https://latex.codecogs.com/png.latex?%20x%20%5Csuccsim%20y%20%5Ciff%20u(x)%20%5Cge%20u(y)"> We define v(x) as f(u(x)). And since f is a strictly increasing function denoted by <img src="https://latex.codecogs.com/png.latex?%20x_2%20%3E%20x_1%20%5Ciff%20f(x_2)%20%3E%20f(x_1)%20"> which by contrapositive is logically equivalent to <img src="https://latex.codecogs.com/png.latex?%20x_1%20%5Cge%20x_2%20%5Ciff%20f(x_1)%20%5Cge%20f(x_2)"> Since in our utility function we have u(x) <img src="https://latex.codecogs.com/png.latex?%5Cge"> u(y), we can then say that f(u(x)) <img src="https://latex.codecogs.com/png.latex?%5Cge"> f(u(y)), which is equivalent to: <img src="https://latex.codecogs.com/png.latex?%20u(x)%20%5Cge%20u(y)%20%5Ciff%20v(x)%20%5Cge%20v(y)"> By definition of v(x) = f(u(x))! Thus we can say <img src="https://latex.codecogs.com/png.latex?%20x%20%5Csuccsim%20y%20%5Ciff%20u(x)%20%5Cge%20u(y)%20%5Ciff%20v(x)%20%5Cge%20v(y)%20"> which means <img src="https://latex.codecogs.com/png.latex?%20x%20%5Csuccsim%20y%20%5Ciff%20v(x)%20%5Cge%20v(y)%20"> Thus v is a utility function representing preference relation! fadadsf</p>
 
 
 </section>
